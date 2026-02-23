@@ -39,15 +39,23 @@ export default function HomePage() {
     { name: "Node.js", color: "bg-green-500/10 text-green-600 dark:text-green-400" },
   ];
 
-  const skillsIntermediate = [
-    "HTML", "JavaScript", "CSS", "TypeScript", "ООП",
-    "PostgreSQL", "Python", "Node.js", "Angular", "FastAPI",
-    "SQL", "REST", "ORM", "SQLAlchemy", "MongoDB", "Express.js", "Redis",
-  ];
-
-  const skillsBasic = [
-    "Git", "C#", "C++", ".NET Framework", "Docker",
-    "Linux", "Celery", "Nginx", "Pytest",
+  const skills = [
+    { name: "Angular", color: "bg-red-500/10 text-red-600 dark:text-red-400" },
+    { name: "Node.js", color: "bg-green-500/10 text-green-600 dark:text-green-400" },
+    { name: "MongoDB", color: "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400" },
+    { name: "Express.js", color: "bg-gray-500/10 text-gray-600 dark:text-gray-300" },
+    { name: "Python", color: "bg-yellow-500/10 text-yellow-600 dark:text-yellow-400" },
+    { name: "FastAPI", color: "bg-teal-500/10 text-teal-600 dark:text-teal-400" },
+    { name: "PostgreSQL", color: "bg-blue-500/10 text-blue-600 dark:text-blue-400" },
+    { name: "Redis", color: "bg-orange-500/10 text-orange-600 dark:text-orange-400" },
+    { name: "TypeScript", color: "bg-blue-400/10 text-blue-500 dark:text-blue-300" },
+    { name: "REST API", color: "bg-purple-500/10 text-purple-600 dark:text-purple-400" },
+    { name: "SQLAlchemy", color: "bg-indigo-500/10 text-indigo-600 dark:text-indigo-400" },
+    { name: "Docker", color: "bg-sky-500/10 text-sky-600 dark:text-sky-400" },
+    { name: "Celery", color: "bg-lime-500/10 text-lime-600 dark:text-lime-400" },
+    { name: "Nginx", color: "bg-green-600/10 text-green-700 dark:text-green-400" },
+    { name: "Linux", color: "bg-stone-500/10 text-stone-600 dark:text-stone-400" },
+    { name: "Git", color: "bg-rose-500/10 text-rose-600 dark:text-rose-400" },
   ];
 
   return (
@@ -198,29 +206,15 @@ export default function HomePage() {
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Навыки</h2>
           </div>
-          <div className="space-y-8">
-            <div>
-              <div className="flex items-center gap-2 mb-4">
-                <div className="w-2 h-2 rounded-full bg-primary" />
-                <span className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">Средний уровень</span>
-              </div>
-              <div className="flex flex-wrap gap-2">
-                {skillsIntermediate.map((s) => (
-                  <Badge key={s} variant="secondary" className="text-sm px-3 py-1">{s}</Badge>
-                ))}
-              </div>
-            </div>
-            <div>
-              <div className="flex items-center gap-2 mb-4">
-                <div className="w-2 h-2 rounded-full bg-muted-foreground" />
-                <span className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">Базовый уровень</span>
-              </div>
-              <div className="flex flex-wrap gap-2">
-                {skillsBasic.map((s) => (
-                  <Badge key={s} variant="outline" className="text-sm px-3 py-1">{s}</Badge>
-                ))}
-              </div>
-            </div>
+          <div className="flex flex-wrap justify-center gap-3">
+            {skills.map((s) => (
+              <span
+                key={s.name}
+                className={`px-4 py-2 rounded-full text-sm font-medium border border-transparent ${s.color}`}
+              >
+                {s.name}
+              </span>
+            ))}
           </div>
         </div>
       </section>
